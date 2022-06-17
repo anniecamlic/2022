@@ -1,0 +1,58 @@
+#Author: Anita Camlic
+#I will use this jupiter notebook to learn numpy & its capabilities.
+
+#the first step is always importing numpy and renaming it, so it is easier to reference
+import numpy as np
+
+#now we will use the arange method to create a two dimensional array
+a = np.arange(10).reshape(2,5)
+
+#we can also manually create the array we want
+b = np.array([5,4,3,2,1])
+
+#now we want to display the array to make sure we created the outcome we desired
+print(a)
+print(b)
+
+#now we use the shape method to display the dimensions of the array
+print(a.shape)    
+print(b.shape)
+ 
+#now I am demonstrating how to use the size method, which displays the number of elements in the array
+print(a.size)
+print(b.size)
+#now I will demonstrate how to use the zeros function. this function takes as parameter, the dimensions you would like the array to be, then fills the 
+#with all zeros
+z = np.zeros((2,2))
+print(z)
+
+#now we will use the ones function, which is similar to the seros funcction, except for instead of filling the array with zeros , ut fills it with ones
+o = np.ones((2,2))
+print(o)
+# now we will look into the empty function. This f ntion is similar to the zeros and ones function, in that it fills arrays for us when given the
+#dimensions. This function fills the array with random numbers, based on the space and memory that is available
+e = np.empty((2,2))
+print(e)
+#now we will explore the arange function, it was briefly used earlier but now I will demonstrate how it works in its entirety
+#the arange function takes two or three parameters, it takes a starting value, an ending value, and an optional value of what you want the
+#increments to be. The returned value after calling this function is an array filled with value starting from the first parameter and 
+#ending before/once it reaches the second parameter. It will use step if there is a third parameter entered. The default it a step of 1
+#It should be noted that the arange function accepts floats and integers as input
+array1 = np.arange(1,11)
+array2 = np.arange(1,11,1)
+print(array1)
+print(array2)
+
+#you can also call the arange function with just one parameter. If you do this, it will return an array with calues starting from 0, and up to the 
+#number that you sent in as a parameter. This function does not support the one parameter being e negative number though.
+array0 = np.arange(-10)
+print(array0)
+array7 = np.arange(7)
+print(array7)
+
+#now we will explore the linspace function
+#similarities between linspace and arange: both functions return an array, both functions can take two (or three) parameters
+#differences between linspace and arange:the resultant array will contain the second number parameter, instead of a step parameter, you 
+#provide this function with the number of elements we want in the resultant array, the default third parameter is 50 if one is not provided
+array3 = np.linspace(1,50)
+print(array3)
