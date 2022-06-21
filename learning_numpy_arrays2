@@ -1,0 +1,127 @@
+import numpy as np
+
+#Author: Anita Camlic
+
+#how to initialize an array using numpy
+a = np.array([1,2,3,4,5,6,7,8,9,10])
+print(a)
+
+#initializing a 2d array
+b = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+print(b)
+
+#how to retrieve the dimension of your array
+print(a.ndim)
+print(b.ndim)
+
+#how to get the shape of the array 
+print(a.shape)
+print(b.shape)
+
+#how to get a certain value returned [row,column] 
+print(a[2]) #should be 3
+print(b[1,2]) #should be 8
+
+#how to get a specific row returned
+print(b[0,:])
+
+#how to get specific column
+print(b[:,0]) #should be [1,6]
+
+#you can also access parts of the array by using [row, start:stop:step] start is inclusive, stop is exclusive
+print(b[0,0:4:2])
+
+#how to change values in an array
+a[9] = 100
+print(a)
+
+#how to change a whole row
+b[0,:] = 10
+print(b)
+
+#how to change a whole column
+b[:,3] = 800
+print(b)
+
+#how to change a whole column to different thing
+b[:,3] = [700,500]
+print(b)
+
+#multi dimensional example
+c = np.array([[[1,2], [3,4]],[[5,6],[7,8]]])
+print(c)
+print(c[1,0,1]) #remember when you want to get a single element, use commas, not colons
+print(c[:,0,:])
+print(c[0,:,:])
+print(c[:,:,0])
+
+#replacing parts of a multidimesional array
+#just make sure its the same dimension of what you are replacing
+c[:,:,0] = [[0,0],[0,0]]
+print(c)
+
+#using the zeros function, with multidimensional arrays 
+a = np.zeros(2)
+print(a) #one dimension
+
+a = np.zeros((2,2)) #two dimensions
+print(a)
+
+a = np.zeros((2,2,2)) #three dimensions... and beyond
+print(a)
+
+#demonstating using the full function. 
+#parameters: np.full((shape), value)
+b = np.full((2,2), 4)
+print(b)
+
+
+b = np.full((2,2), True) 
+
+#demonstrating the full_like function, where you can create an array with the shape of an already existing array 
+#parameters: np.full_like(array_name, value)
+a = np.full_like(b,False)
+print(a)
+
+#filling an array with random decimal numbers within (0,1)
+#parameters: np.random.rand(dimension1, dimension2) 
+b = np.random.rand(3,2)
+print(b)
+
+
+#filling an array with random integers
+#parameters: np.random.randint(max_value,size = (shape)) or np.random.randint(min_value, max_value,size = (shape)) for a range
+a = np.random.randint(100,size=(2,2))
+print(a)
+
+#creating an identity matrix
+#only takes 1 parameter because the identity matrix is always n x n 
+#parameters: np.identity(n)
+b = np.identity(4)
+print(b)
+
+#hereI am tryinf to create an array without simply inputting it manually
+t = np.ones((5,5))
+print(t)
+
+t[1:4,1:4] = 0
+print(t)
+
+t[2,2] = 9
+print(t)
+
+#mathematics capabilities in numpy
+a = np.array([1,2,3,4,5,6])
+print(a + 1)
+print(a - 5) 
+print(a * 2)
+print(a / 2)
+
+#multiplying arrays
+a = np.array([1,2,3,4])
+b = np.array([1,0,1,0])
+c = a * b 
+print(c)
+d = a +1 
+print(d)
+print(a ** 2)
